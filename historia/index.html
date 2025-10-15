@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>História e Cultura de Jaguariaíva</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+</head>
+<body>
+
+<header>
+  <h1>História e Cultura de Jaguariaíva</h1>
+  <p>Descubra as riquezas históricas e culturais da nossa cidade</p>
+
+</header>
+
+<nav>
+  <a href="#historia">📜 História</a>
+  <a href="#cultura"> 🎭 Cultura</a>
+  <a href="#patrimonio">🏛️ Patrimônio</a>
+  <a href="#turismo">🌄 Turismo</a>
+  <a href="#galeria">🖼️ Galeria</a>
+
+</nav>
+
+<main>
+  <section id="historia">
+    <h2>📜 História</h2>
+    <p>Jaguariaíva, localizada no coração do Paraná, é uma cidade com profundas raízes históricas que remontam ao século XIX. Fundada oficialmente em 1874, seu nome tem origem indígena e significa “rio dos jaguares”. A cidade cresceu inicialmente com a colonização portuguesa e imigrantes europeus, desenvolvendo uma economia baseada na agricultura, especialmente na produção de erva-mate e café, além da indústria madeireira.</p>
+    <p>Ao longo do tempo, Jaguariaíva consolidou-se como polo regional, preservando suas tradições e sua identidade cultural. A história da cidade é marcada pelo respeito à natureza e às comunidades locais que ajudaram a moldar seu caráter.</p>
+    <img src="images/polo.webp" alt="Foto histórica de Jaguariaíva" />
+  </section>
+
+  <section id="cultura">
+    <h2> 🎭 Cultura</h2>
+    <p>A cultura de Jaguariaíva é um vibrante mosaico de tradições indígenas, portuguesas e de imigrantes europeus. Entre os eventos mais importantes estão a Festa do Pinhão, que celebra a colheita e a gastronomia local, e o Festival de Música e Dança, que reúne talentos regionais e valoriza as expressões artísticas da comunidade.</p>
+    <p>Além disso, a culinária típica com pratos à base de pinhão, erva-mate e outras delícias regionais faz parte do orgulho local. Artesanato em madeira, cerâmica e bordados também são destaques que refletem o talento e a criatividade dos jaguariaivenses.</p>
+    <img src="images/cultura.webp" alt="Cultura local em Jaguariaíva" />
+  </section>
+
+  <section id="patrimonio">
+    <h2> 🏛️ Patrimônio</h2>
+    <p>Jaguariaíva abriga diversos patrimônios históricos e culturais que contam a trajetória da cidade. Destacam-se as igrejas centenárias, o Museu Histórico Municipal, e antigos casarões que preservam a arquitetura colonial. Esses locais são fundamentais para a compreensão do passado e para a valorização do presente.</p>
+    <p>Além disso, a cidade mantém áreas naturais preservadas que representam não só a beleza, mas também a importância ambiental para a região.</p>
+    <img src="images/patri.webp" alt="Patrimônio histórico de Jaguariaíva" />
+  </section>
+
+  <section id="turismo">
+    <h2>🌄 Turismo </h2>
+    <p>🌄 Natureza e Aventura A cidade é conhecida por suas paisagens naturais impressionantes, como cânions, cachoeiras e trilhas. É um destino ideal para quem curte ecoturismo, esportes radicais e contato com a natureza.</p>
+    <p>🏛️ História e Cultura Fundada em 1874, Jaguariaíva tem raízes indígenas e colonização portuguesa. O nome significa “rio dos jaguares”. A cidade preserva igrejas centenárias, casarões históricos e o Museu Histórico Municipal, que revelam sua trajetória cultural.</p>
+    <img src="images/polo.webp" alt="Foto histórica de Jaguariaíva" />
+  </section>
+
+  <section id="galeria">
+    <h2> 🖼️ Galeria de Fotos</h2>
+    <p>Explore um pouco da beleza e do dia a dia de Jaguariaíva através destas imagens que retratam suas paisagens, eventos culturais e vida comunitária.</p>
+    <img src="images/vista.webp" alt="Vista panorâmica da cidade" />
+    <img src="images/local.webp" alt="Evento cultural local" />
+    <img src="images/regiao.webp" alt="Natureza preservada na região" />
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2025 Jaguariaíva - Todos os direitos reservados.</p>
+</footer>
+<!-- ... seu código acima permanece o mesmo -->
+
+<section id="historias">
+  <h2>📖 Compartilhe uma História</h2>
+  <form id="formHistoria">
+    <input type="text" id="nome" placeholder="Seu nome" required />
+    <textarea id="mensagem" placeholder="Escreva sua história..." required></textarea>
+    <button type="submit">Enviar História</button>
+  </form>
+
+  <div id="listaHistorias">
+    <h3>🗂️ Histórias Enviadas:</h3>
+    <ul id="historiasContainer"></ul>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Jaguariaíva - Todos os direitos reservados.</p>
+</footer>
+
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<script>
+  // 🔐 Substitua com seu config do Firebase
+  const firebaseConfig = {
+    apiKey: "AIzaSyDvxkBLee--L2dg09KuXYt76QqgDdqFszw",
+    authDomain: "hist-200a2.firebaseapp.com",
+    projectId: "hist-200a2",
+    storageBucket: "hist-200a2.firebasestorage.app",
+    messagingSenderId: "47120658813",
+    appId: "1:47120658813:web:e091960bde85e33ed11c14",
+    measurementId: "G-LELB7EHP76"
+  };
+
+
+  // Inicializa Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+    const form = document.getElementById("formHistoria");
+    const mensagemInput = document.getElementById("mensagem");
+    const statusEnvio = document.getElementById("statusEnvio");
+    const containerHistorias = document.getElementById("historiasContainer");
+
+
+  // Enviar história
+  document.getElementById("formHistoria").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const nome = document.getElementById("nome").value.trim();
+    const mensagem = document.getElementById("mensagem").value.trim();
+
+    if (!nome || !mensagem) return alert("Preencha todos os campos!");
+
+    try {
+      await db.collection("historias").add({
+        nome,
+        mensagem,
+        data: new Date()
+      });
+      document.getElementById("formHistoria").reset();
+    } catch (err) {
+      console.error("Erro ao enviar:", err);
+    }
+  });
+
+  // Listar histórias
+  db.collection("historias").orderBy("data", "desc").onSnapshot((snapshot) => {
+    const container = document.getElementById("historiasContainer");
+    container.innerHTML = "";
+
+    snapshot.forEach(doc => {
+      const dados = doc.data();
+      const li = document.createElement("li");
+      li.innerHTML = `<strong>${dados.nome}</strong>: ${dados.mensagem}`;
+      container.appendChild(li);
+    });
+  });
+
+
+
+    // Carregar histórias existentes
+    async function carregarHistorias() {
+      const snapshot = await db.collection("historias").orderBy("data", "desc").get();
+      containerHistorias.innerHTML = "";
+      if (snapshot.empty) {
+        containerHistorias.innerHTML = "<p>Nenhuma história publicada ainda.</p>";
+        return;
+      }
+      snapshot.forEach(doc => {
+        const dados = doc.data();
+        const p = document.createElement("p");
+        p.textContent = dados.conteudo;
+        containerHistorias.appendChild(p);
+      });
+    }
+
+    // Chamar ao carregar página
+    carregarHistorias();
+
+</script>
+
+
+</body>
+</html>

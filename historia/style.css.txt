@@ -1,0 +1,172 @@
+  body {
+      font-family: 'Segoe UI', Monospace, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+
+    }
+    header {
+      background-image: url('images/pr.jpg');
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+    nav {
+      background: #0056b3;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.8rem 1rem;
+      flex-wrap: wrap;
+
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1.2rem;
+      border-radius: 5px;
+      transition: background 0.3s;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    nav a:hover,
+    nav a:focus {
+      background: #003f7f;
+      outline: none;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
+    }
+    section {
+      margin-bottom: 3rem;
+      background: white;
+      padding: 1.8rem 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgb(0 0 0 / 0.1);
+      scroll-margin-top: 100px;
+    }
+    h2 {
+      border-bottom: 3px solid #007BFF;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #e0e0e0;
+      font-size: 0.9rem;
+      color: #555;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+      nav a {
+        font-size: 1.1rem;
+      }
+    }
+    /* Seção de Histórias */
+    #historias {
+      margin-bottom: 3rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgb(0 0 0 / 0.1);
+    }
+
+    #historias h2 {
+      border-bottom: 3px solid #007BFF;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    #formHistoria {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    #formHistoria input,
+    #formHistoria textarea {
+      padding: 0.9rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: inherit;
+      resize: vertical;
+    }
+
+    #formHistoria textarea {
+      min-height: 120px;
+    }
+
+    #formHistoria button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 0.9rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    #formHistoria button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Lista de Histórias */
+    #listaHistorias {
+      margin-top: 2rem;
+    }
+
+    #listaHistorias h3 {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    #historiasContainer {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 700px;
+    }
+
+    #historiasContainer li {
+      background: #f4f4f4;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    }
+
+    #historiasContainer strong {
+      color: #00008B;
+      font-weight: bold;
+    }
